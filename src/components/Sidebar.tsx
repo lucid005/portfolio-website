@@ -43,7 +43,7 @@ export default function Sidebar() {
           />
           <div className="text-sm leading-4">
             <p className="font-normal">Saurav Shrestha</p>
-            <span className="font-light text-xs">Web Developer</span>
+            <span className="font-light text-[#7C7F82]">Web Developer</span>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -80,7 +80,7 @@ export default function Sidebar() {
             />
             <div className="text-sm leading-4.5">
               <p className="font-normal">Saurav Shrestha</p>
-              <span className="font-light">Web Developer</span>
+              <span className="font-light text-[#7C7F82]">Web Developer</span>
             </div>
           </div>
           <div className="space-y-6">

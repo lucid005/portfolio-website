@@ -6,7 +6,6 @@ import { Menu } from "lucide-react";
 import { useState } from "react";
 import { ModeToggle } from "./ModeToggle";
 import { useRouter, usePathname } from "next/navigation";
-import { theme } from "../../tailwind.config";
 import { useTheme } from "next-themes";
 
 export default function Sidebar() {

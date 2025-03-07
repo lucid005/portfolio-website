@@ -8,17 +8,17 @@ const iconSize = "18px";
 export const navLinks = [
   {
     text: "About",
-    href: "/About",
+    href: "/about",
     icon: React.createElement(CircleUserRound, { size : iconSize }),
   },
   {
     text: "Projects",
-    href: "/Projects",
+    href: "/my-projects",
     icon: React.createElement(Folder, { size : iconSize }),
   },
   {
     text: "Tech Stack",
-    href: "/TechStack",
+    href: "/tech-stack",
     icon: React.createElement(Wrench, { size : iconSize }),
   },
 ];

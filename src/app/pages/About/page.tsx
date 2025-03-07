@@ -1,11 +1,13 @@
-"use client"
+"use client";
 
-import { ModeToggle } from "@/components/ModeToggle"
+import { ModeToggle } from "@/components/ModeToggle";
 
 export default function About() {
-    return (
-       <div>
-            <ModeToggle />
-       </div>
-    )
+  return (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold">About Me</h1>
+      <p className="mt-4">This is the about page content.</p>
+      <ModeToggle />
+    </div>
+  );
 }

@@ -6,7 +6,7 @@ import TechStack from "./pages/TechStack/page";
 
 export default function Home() {
   return (
-    <div>
+    <div className="w-full h-screen fixed">
       <Sidebar />
       <div>
         <About />

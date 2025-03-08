@@ -123,8 +123,10 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
+  html, body {
     font-family: var(--font-inter);
+    height: 100%;
+    overflow: hidden;
     @apply bg-background text-foreground;
   }
 }

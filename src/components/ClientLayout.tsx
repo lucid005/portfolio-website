@@ -14,11 +14,22 @@ export default function ClientLayout({
     <div
       className={`${
         theme === "dark" ? "bg-[#131313] text-white" : "bg-[#f9f9f9] text-black"
-      } w-full min-h-screen xl:p-2 flex flex-col xl:flex-row xl:gap-2`}
+      } w-full h-screen flex flex-col xl:flex-row`}
     >
+      {/* Sidebar remains fixed */}
       <Sidebar />
-      <div className={`${theme === "dark" ? "bg-[#0F0F0F] text-white border-[#222222]" : "bg-white text-black"} border xl:rounded-xl shadow-sm w-full flex-1`}>
-        {children}
+      
+      {/* Ensure only content scrolls */}
+      <div className="flex-1 overflow-y-auto h-screen p-0 xl:p-2">
+        <div
+          className={`${
+            theme === "dark"
+              ? "bg-[#0F0F0F] text-white border-[#222222]"
+              : "bg-white text-black"
+          } border xl:rounded-xl shadow-sm w-full min-h-full`}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );

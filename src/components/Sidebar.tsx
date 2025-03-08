@@ -61,12 +61,10 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <div
-        className={`fixed xl:relative inset-y-0 left-0 transform ${
+        className={`fixed xl:relative inset-y-0 left-0 w-[250px] h-screen ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } xl:translate-x-0 transition-transform duration-200 ease-in-out w-[250px] h-full ${
-          theme === "dark"
-            ? "bg-[#131313] text-white"
-            : "bg-white xl:bg-[#f9f9f9]"
+        } xl:translate-x-0 transition-transform duration-200 ease-in-out ${
+          theme === "dark" ? "bg-[#131313] text-white" : "bg-white xl:bg-[#f9f9f9]"
         } z-40`}>
         <div className="w-full h-full px-4 space-y-8 mt-8">
           <div className="flex items-center gap-2">

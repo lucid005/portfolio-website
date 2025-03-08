@@ -28,6 +28,54 @@ export const projects = [
   }
 ]
 
+export const techs = [
+  {
+    logo: "/figma.png",
+    title: "Figma",
+    description: "Design Tool" 
+  },
+  {
+    logo: "/vscode.png",
+    title: "VS Code",
+    description: "Code Editor" 
+  },
+  {
+    logo: "/github.png",
+    title: "Github",
+    description: "Collaboration Platform" 
+  },
+  {
+    logo: "/git.png",
+    title: "Git",
+    description: "Version Control" 
+  },
+  {
+    logo: "/nextjs.png",
+    title: "NextJS",
+    description: "Frontend Framework" 
+  },
+  {
+    logo: "/reactjs.png",
+    title: "ReactJs",
+    description: "Frontend Framework" 
+  },
+  {
+    logo: "/tailwind.png",
+    title: "TailwindCSS",
+    description: "CSS Framework" 
+  },
+  {
+    logo: "/typescript.png",
+    title: "TypeScript",
+    description: "Javascript Framework" 
+  },
+  {
+    logo: "/shadcn.png",
+    title: "Shadcn",
+    description: "Design System Library" 
+  },
+]
+
 const ExpData = () => {};
 
 export default ExpData();

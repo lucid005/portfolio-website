@@ -5,6 +5,7 @@ import { ModeToggle } from "@/components/ModeToggle";
 import { useTheme } from "next-themes";
 import { education, experience } from "@/data/MyData";
 import { FaLocationDot } from "react-icons/fa6";
+import Footer from "@/components/Footer";
 
 export default function About() {
   const { theme } = useTheme();
@@ -17,7 +18,7 @@ export default function About() {
   });
 
   return (
-    <div className="p-4 flex flex-col items-center justify-center mb-24">
+    <div className="p-4 flex flex-col items-center justify-center">
       <div className="hidden xl:flex justify-end w-full">
         <ModeToggle />
       </div>
@@ -98,6 +99,9 @@ export default function About() {
             ))}
           </div>
         </div>
+      </div>
+      <div className="w-full mt-40">
+        <Footer />
       </div>
     </div>
   );

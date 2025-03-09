@@ -19,13 +19,20 @@ export const education = [
 
 export const projects = [
   {
-    time: "May 2024",
+    time: "Aug 2024",
     title: "Recipe Sharing App",
-    techs: "  MongoDB, ExpressJS, ReactJS, NodeJS, TailwindCSS, Shadcn",
-    description: "Lorem ipsum dolor sit amet consectetur. Amet justo purus egestas non ac libero eget risus tincidunt. Lacus vel viverra enim nec sed porttitor lectus id. Ipsum elementum et diam tellus tempor interdum gravida. ",
+    techs: "MongoDB, ExpressJS, ReactJS, NodeJS, TailwindCSS, Shadcn",
+    description: "This website enables a community-driven recipe sharing experience. It features a dual registration system where cooks can both submit and explore recipes, while regular users can browse and enjoy the culinary creations. An integrated admin panel further ensures smooth management and moderation of content.",
     sourceCodeFrn: "https://github.com/lucid005/Recipe-Sharing-App---frontend",
     sourceCodeBack: "https://github.com/lucid005/Recipe-Sharing-App---backend"
-  }
+  },
+  {
+    time: "Feb 2024",
+    title: "Weather App",
+    techs: "HTML, CSS, JavaScript, PHP, MYSQL",
+    description: "This project is a functional Weather App developed as part of my college assessment. Built using HTML, CSS, JavaScript, PHP, and MySQL, the app allows users to search for any city to retrieve detailed weather information—including cloud coverage, temperature, pressure, wind speed, and humidity. It also features a default city with a week-long forecast, with the data stored in a MySQL database for historical reference.",
+    sourceCode: "https://github.com/lucid005/weather-app"
+  },
 ]
 
 export const techs = [

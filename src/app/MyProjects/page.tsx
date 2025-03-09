@@ -15,10 +15,10 @@ export default function MyProjects() {
         <ModeToggle />
       </div>
       <div className="w-[350px] sm:w-[500px] md:w-[650px] lg:w-[750px] mt-16  space-y-20">
-        <div className="space-y-20">
+        <div className="space-y-15">
           <h1 className="text-3xl font-medium">Projects</h1>
           <div>
-            <div className="flex flex-col gap-20">
+            <div className="flex flex-col gap-10">
               {projects.map((data, index) => (
                 <div
                   key={index}
@@ -44,7 +44,7 @@ export default function MyProjects() {
                       {data.sourceCodeFrn && (
                         <a
                           href={data.sourceCodeFrn}
-                          className="flex items-center hover:text-blue-800">
+                          className="flex items-center hover:text-blue-800" target="_blank">
                           Source Code (frontend){" "}
                           <span className="font-bold">
                             <GoArrowUpRight />
@@ -54,7 +54,7 @@ export default function MyProjects() {
                       {data.sourceCodeBack && (
                         <a
                           href={data.sourceCodeBack}
-                          className="flex items-center hover:text-blue-800">
+                          className="flex items-center hover:text-blue-800" target="_blank">
                           Source Code (backend){" "}
                           <span className="font-bold">
                             <GoArrowUpRight />
@@ -66,7 +66,7 @@ export default function MyProjects() {
                         data.sourceCode && (
                           <a
                             href={data.sourceCode}
-                            className="flex items-center hover:text-blue-800">
+                            className="flex items-center hover:text-blue-800" target="_blank">
                             Source Code{" "}
                             <span className="font-bold">
                               <GoArrowUpRight />

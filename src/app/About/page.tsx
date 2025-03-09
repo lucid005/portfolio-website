@@ -6,6 +6,8 @@ import { useTheme } from "next-themes";
 import { education, experience } from "@/data/MyData";
 import { FaLocationDot } from "react-icons/fa6";
 import Footer from "@/components/Footer";
+import { resources } from "@/data/NavData";
+import Link from "next/link";
 
 export default function About() {
   const { theme } = useTheme();
@@ -42,31 +44,33 @@ export default function About() {
             experience.
           </p>
           <div className="flex items-center space-x-3">
-            <button
-              className={`${
-                theme === "dark"
-                  ? "bg-white text-black"
-                  : "bg-[#1C1C1C] text-white border-none"
-              } border h-[2.5rem] w-36 rounded-md text-sm font-semibold`}>
-              Resume
-            </button>
-            <button
-              className={`${
-                theme === "dark"
-                  ? "bg-[#1C1C1C] text-white"
-                  : "border border-[#c5c5c5]"
-              }  h-[2.5rem] w-36 rounded-md text-sm`}>
-              Send Mail
-            </button>
+            {resources.map((data, index) => (
+              <div key={index} >
+                <a href={data.href} target="_blank">
+                  <button
+                    className={`${
+                      theme === "dark"
+                        ? index === 0
+                          ? "bg-white text-black"
+                          : "bg-[#1C1C1C] text-white border-none"
+                        : index === 0
+                        ? "bg-[#1C1C1C] text-white"
+                        : "border border-[#c5c5c5]"
+                    } border h-[2.5rem] w-36 rounded-md text-sm font-medium cursor-pointer`}>
+                    <p>{data.text}</p>
+                  </button>
+                </a>
+              </div>
+            ))}
           </div>
         </div>
         <div className="w-full space-y-10">
           <h3 className="font-semibold text-xl">Experience</h3>
           <div>
             {experience.map((exp, index) => (
-              <div key={index} className="flex flex-col gap-2">
-                <div className="">
-                  <div className="w-full flex items-center justify-between">
+              <div key={index} className="flex flex-col gap-4 lg:gap-2">
+                <div>
+                  <div className="w-full flex flex-col lg:flex-row lg:items-center justify-between">
                     <h3 className="text-lg">{exp.title}</h3>
                     <p className="text-sm text-[#7C7F82]">{exp.duration}</p>
                   </div>
@@ -81,9 +85,9 @@ export default function About() {
           <h3 className="font-semibold text-xl">Education</h3>
           <div>
             {education.map((edu, index) => (
-              <div key={index} className="flex flex-col gap-2">
+              <div key={index} className="flex flex-col gap-4 lg:gap-2">
                 <div>
-                  <div className="w-full flex items-center justify-between">
+                  <div className="w-full flex flex-col lg:flex-row lg:items-center justify-between">
                     <h3 className="text-lg">{edu.name}</h3>
                     <p className="text-sm text-[#7C7F82]">{edu.duration}</p>
                   </div>

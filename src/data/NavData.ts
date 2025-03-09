@@ -26,12 +26,12 @@ export const navLinks = [
 export const resources = [
   {
     text: "Resume",
-    href: "",
+    href: "/SauravShresthaResume.pdf",
     icon: React.createElement(FileUser, { size : iconSize }),
   },
   {
     text: "Send mail",
-    href: "",
+    href: "/Contact",
     icon: React.createElement(Mail, { size : iconSize }),
   },
 ];

@@ -16,10 +16,8 @@ export default function ClientLayout({
         theme === "dark" ? "bg-[#131313] text-white" : "bg-[#f9f9f9] text-black"
       } w-full h-screen flex flex-col xl:flex-row`}
     >
-      {/* Sidebar remains fixed */}
       <Sidebar />
-      
-      {/* Ensure only content scrolls */}
+
       <div className="flex-1 overflow-y-auto h-screen p-0 xl:p-2">
         <div
           className={`${

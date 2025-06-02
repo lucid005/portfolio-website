@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function TechStack() {
   return (
-    <div className="p-4 flex flex-col items-center justify-center mb-20">
+    <div className="p-4 flex flex-col items-center justify-center border pb-40 ">
       <div className="hidden xl:flex justify-end w-full">
         <ModeToggle />
       </div>

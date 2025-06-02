@@ -8,7 +8,7 @@ export default function Contact() {
   const { theme } = useTheme();
 
   return (
-    <div className="p-4 flex flex-col items-center justify-center">
+    <div className="p-4 flex flex-col items-center pb-[140px]">
       <div className="hidden xl:flex justify-end w-full">
         <ModeToggle />
       </div>

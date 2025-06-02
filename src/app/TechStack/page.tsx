@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function TechStack() {
   return (
-    <div className="p-4 flex flex-col items-center justify-center">
+    <div className="p-4 flex flex-col items-center justify-center mb-20">
       <div className="hidden xl:flex justify-end w-full">
         <ModeToggle />
       </div>
@@ -14,7 +14,7 @@ export default function TechStack() {
           <div className="space-y-12">
             <div className="space-y-5">
               <h3>Tools I use to create and store my projects</h3>
-              <div className="grid grid-cols-2 w-full gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-4">
                 {techs_tools.map((items, index) => (
                   <div key={index} className="flex w-full items-center gap-1 ">
                     <Image
@@ -22,7 +22,7 @@ export default function TechStack() {
                       width={80}
                       height={80}
                       alt="logo"
-                      className="w-[80px]"
+                      className="w-[60px]"
                     />
                     <div>
                       <p>{items.title}</p>
@@ -34,9 +34,9 @@ export default function TechStack() {
             </div>
             <div className="space-y-5">
               <h3>Frontend Frameworks and Materials I use to create amazing looking websites</h3>
-              <div className="grid grid-cols-2 w-full gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-6">
                 {techs_frontend_tools.map((items, index) => (
-                  <div key={index} className="flex w-full items-center gap-1 ">
+                  <div key={index} className="flex w-full items-center gap-4 ">
                   <Image
                     src={items.dark_logo}
                     width={80}

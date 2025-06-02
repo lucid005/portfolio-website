@@ -7,7 +7,6 @@ import { education, experience } from "@/data/MyData";
 import { FaLocationDot } from "react-icons/fa6";
 import Footer from "@/components/Footer";
 import { resources } from "@/data/NavData";
-import Link from "next/link";
 
 export default function About() {
   const { theme } = useTheme();
@@ -46,7 +45,7 @@ export default function About() {
           <div className="flex items-center space-x-3">
             {resources.map((data, index) => (
               <div key={index} >
-                <a href={data.href} target="_blank">
+                <a href={data.href}>
                   <button
                     className={`${
                       theme === "dark"

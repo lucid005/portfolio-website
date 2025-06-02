@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="flex items-center gap-5 text-sm text-[#7C7F82]">
         <p>
           Let's{" "}
-          <a href="" className=" underline">
+          <a href="/Contact" className=" underline">
             Chat
           </a>
         </p>

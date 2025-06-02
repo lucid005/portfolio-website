@@ -21,68 +21,80 @@ export const projects = [
   {
     time: "Aug 2024",
     title: "Recipe Sharing App",
-    techs: "MongoDB, ExpressJS, ReactJS, NodeJS, TailwindCSS, Shadcn",
+    techs: "MERN stack, TailwindCSS, Shadcn",
     description: "This website enables a community-driven recipe sharing experience. It features a dual registration system where cooks can both submit and explore recipes, while regular users can browse and enjoy the culinary creations. An integrated admin panel further ensures smooth management and moderation of content.",
     sourceCodeFrn: "https://github.com/lucid005/Recipe-Sharing-App---frontend",
     sourceCodeBack: "https://github.com/lucid005/Recipe-Sharing-App---backend"
   },
   {
-    time: "Feb 2024",
-    title: "Weather App",
-    techs: "HTML, CSS, JavaScript, PHP, MYSQL",
-    description: "This project is a functional Weather App developed as part of my college assessment. Built using HTML, CSS, JavaScript, PHP, and MySQL, the app allows users to search for any city to retrieve detailed weather information—including cloud coverage, temperature, pressure, wind speed, and humidity. It also features a default city with a week-long forecast, with the data stored in a MySQL database for historical reference.",
-    sourceCode: "https://github.com/lucid005/weather-app"
+    time: "May 2025",
+    title: "Online Rental Service (RentEase)",
+    techs: "MERN stack, TailwindCSS, Shadcn, TypeScript",
+    description: "Developed a role-based web application for renting and listing apartments, flats, and commercial spaces. The platform supports three roles: admin, landlord, and tenant, with features like property browsing, advanced filtering, role-switching, image uploads via Cloudinary, and secure authentication. Built using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
+    sourceCode: "https://github.com/aakritirimal/RentEase"
   },
 ]
 
-export const techs = [
+export const techs_tools = [
   {
-    logo: "/figma.png",
+    dark_logo: "/figma.png",
+    light_logo: "",
     title: "Figma",
     description: "Design Tool" 
   },
   {
-    logo: "/vscode.png",
+    dark_logo: "/vscode.png",
+    light_logo: "",
     title: "VS Code",
     description: "Code Editor" 
   },
   {
-    logo: "/github.png",
+    dark_logo: "/github.png",
+    light_logo: "",
     title: "Github",
     description: "Collaboration Platform" 
   },
   {
-    logo: "/git.png",
+    dark_logo: "/git.png",
+    light_logo: "",
     title: "Git",
     description: "Version Control" 
   },
+]
+
+export const techs_frontend_tools = [
   {
-    logo: "/nextjs.png",
+    dark_logo: "/nextjs.png",
+    light_logo: "",
     title: "NextJS",
     description: "Frontend Framework" 
   },
   {
-    logo: "/reactjs.png",
+    dark_logo: "/reactjs.png",
+    light_logo: "",
     title: "ReactJs",
     description: "Frontend Framework" 
   },
   {
-    logo: "/tailwind.png",
+    dark_logo: "/tailwind.png",
+    light_logo: "",
     title: "TailwindCSS",
     description: "CSS Framework" 
   },
   {
-    logo: "/typescript.png",
+    dark_logo: "/typescript.png",
+    light_logo: "",
     title: "TypeScript",
     description: "Javascript Framework" 
   },
   {
-    logo: "/shadcn.png",
+    dark_logo: "/shadcn.png",
+    light_logo: "",
     title: "Shadcn",
     description: "Design System Library" 
   },
 ]
 
-const ExpData = () => {};
+export const techs_backend_tools = [
 
-export default ExpData();
+]

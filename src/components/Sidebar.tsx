@@ -64,7 +64,9 @@ export default function Sidebar() {
         className={`fixed xl:relative inset-y-0 left-0 w-[250px] h-screen ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } xl:translate-x-0 transition-transform duration-200 ease-in-out ${
-          theme === "dark" ? "bg-[#131313] text-white" : "bg-white xl:bg-[#f9f9f9]"
+          theme === "dark"
+            ? "bg-[#131313] text-white"
+            : "bg-white xl:bg-[#f9f9f9]"
         } z-40`}>
         <div className="w-full h-full px-4 space-y-8 mt-8">
           <div className="flex items-center gap-2">
@@ -115,15 +117,22 @@ export default function Sidebar() {
                 {resources.map((link, index) => (
                   <li
                     key={index}
+                    onClick={() => handleNavigation(link.href)}
                     className={`${
                       theme === "dark"
                         ? "text-[#cccccc] hover:text-white"
                         : "text-gray-700 hover:text-black"
-                    } flex items-center text-sm font-medium rounded-[8px] w-full px-3 py-2 gap-2 cursor-pointer  transition-colors duration-200`}>
+                    } flex items-center text-sm font-medium rounded-[8px] w-full px-3 py-2 gap-2 cursor-pointer transition-colors duration-200  ${
+                      pathname === link.href
+                        ? `${
+                            theme === "dark"
+                              ? "bg-[#2B2B2B] text-white border-[#3a3a3a]"
+                              : "bg-white text-black "
+                          }  border `
+                        : ""
+                    }`}>
                     <span>{link.icon}</span>
-                    <a href={link.href} target="_blank">
-                      {link.text}
-                    </a>
+                    <p>{link.text}</p>
                   </li>
                 ))}
               </ul>

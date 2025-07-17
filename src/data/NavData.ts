@@ -1,7 +1,7 @@
 import React from "react";
 import { CircleUserRound, Folder, Wrench, FileUser, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
 
 const iconSize = "18px";
 
@@ -48,9 +48,9 @@ export const social = [
     icon: React.createElement(FaLinkedin, { size : iconSize }),
   },
   {
-    text: "Twitter",
-    href: "https://x.com/Lucid57673",
-    icon: React.createElement(FaXTwitter, { size : iconSize }),
+    text: "Instagram",
+    href: "https://www.instagram.com/not_lucid_/",
+    icon: React.createElement(FaInstagram, { size : iconSize }),
   },
 ];
 

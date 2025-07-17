@@ -3,6 +3,7 @@
 import { ModeToggle } from "@/components/ModeToggle";
 import { useTheme } from "next-themes";
 import { Send } from "lucide-react";
+import { PiWarningCircleBold } from "react-icons/pi";
 
 export default function Contact() {
   const { theme } = useTheme();
@@ -54,6 +55,11 @@ export default function Contact() {
             </button>
           </form>
         </div>
+      </div>
+
+      <div className="flex items-center gap-2 text-xs hover:text-red-500 pt-44">
+        <PiWarningCircleBold />
+        <p>Currently in process</p>
       </div>
     </div>
   );

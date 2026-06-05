@@ -9,7 +9,8 @@ export default function App() {
       <div className="absolute bottom-4 right-4 flex flex-col items-end gap-3">
         <ThemeToggle />
         <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} My Portfolio. All rights reserved.
+          &copy; {new Date().getFullYear()} Saurav Shrestha. All rights
+          reserved.
         </p>
       </div>
     </main>

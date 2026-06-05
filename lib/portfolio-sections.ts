@@ -5,7 +5,6 @@ import { CertificationsSection } from "@/components/sections/certifications";
 import { ContactSection } from "@/components/sections/contact";
 import { EducationSection } from "@/components/sections/education";
 import { ExperienceSection } from "@/components/sections/experience";
-import { IntroductionSection } from "@/components/sections/introduction";
 import { ProjectsSection } from "@/components/sections/projects";
 
 export type PortfolioSection = {
@@ -15,11 +14,10 @@ export type PortfolioSection = {
 };
 
 export const portfolioSections: PortfolioSection[] = [
-  { id: 1, name: "Introduction", component: IntroductionSection },
-  { id: 2, name: "About Me", component: AboutSection },
-  { id: 3, name: "Education", component: EducationSection },
-  { id: 4, name: "Certifications", component: CertificationsSection },
-  { id: 5, name: "Working Experience", component: ExperienceSection },
-  { id: 6, name: "Projects", component: ProjectsSection },
-  { id: 7, name: "Contact Me", component: ContactSection },
+  { id: 1, name: "About", component: AboutSection },
+  { id: 2, name: "Education", component: EducationSection },
+  { id: 3, name: "Certifications", component: CertificationsSection },
+  { id: 4, name: "Experience", component: ExperienceSection },
+  { id: 5, name: "Projects", component: ProjectsSection },
+  { id: 6, name: "Contact", component: ContactSection },
 ];

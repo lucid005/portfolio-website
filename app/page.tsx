@@ -91,7 +91,7 @@ export default function App() {
   const longIntroWords = longIntro.trim().split(" ");
 
   return (
-    <main className="relative h-svh overflow-x-hidden bg-background text-foreground">
+    <main className="relative min-h-dvh overflow-x-hidden bg-background text-foreground">
       {!isExpanded ? (
         <button
           aria-expanded={isMobileMenuOpen}
@@ -171,9 +171,9 @@ export default function App() {
         ) : null}
       </AnimatePresence>
 
-      <div className="relative mx-auto flex h-svh w-full items-center px-5 flex-col lg:grid lg:max-w-6xl lg:grid-cols-[minmax(300px,400px)_minmax(0,1fr)] lg:gap-4 lg:px-10 lg:py-0">
+      <div className="relative mx-auto flex min-h-dvh w-full items-center px-5 flex-col lg:grid lg:max-w-6xl lg:grid-cols-[minmax(300px,400px)_minmax(0,1fr)] lg:gap-4 lg:px-10 lg:py-0">
         <aside
-          className={`relative z-10 w-full max-w-100 flex-col pt-10 sm:pt-16 lg:pt-50 lg:h-svh lg:pb-16 ${
+          className={`relative z-10 w-full max-w-100 flex-col pt-10 sm:pt-16 lg:pt-50 lg:h-dvh lg:pb-16 ${
             isExpanded ? "hidden lg:flex" : "flex"
           }`}
         >
@@ -354,19 +354,19 @@ export default function App() {
         <section
           className={`relative flex w-full flex-col ${
             isExpanded ? "min-h-screen" : "min-h-0"
-          } lg:h-svh lg:min-h-0`}
+          } lg:h-dvh lg:min-h-0`}
         >
           <div
             ref={scrollRef}
             className={`no-scrollbar relative z-20 flex w-full flex-col ${
               isExpanded
-                ? "min-h-screen px-5 pt-8 pb-32 sm:px-10 lg:py-50"
+                ? "min-h-dvh px-5 pt-8 pb-[calc(8rem+env(safe-area-inset-bottom))] sm:px-10 lg:py-50"
                 : "py-0 lg:py-50"
-            } lg:h-screen lg:min-h-0 lg:overflow-y-auto lg:px-0`}
+            } lg:h-dvh lg:min-h-0 lg:overflow-y-auto lg:px-0`}
           >
             <AnimatePresence mode="wait">
               {isExpanded ? (
-                <div className="relative mx-auto flex min-h-[calc(100svh-3rem)] w-full max-w-2xl flex-col lg:mx-0 lg:block lg:min-h-full lg:pb-0">
+                <div className="relative mx-auto flex min-h-[calc(100dvh-3rem)] w-full max-w-2xl flex-col lg:mx-0 lg:block lg:min-h-full lg:pb-0">
                   <motion.div
                     key={expandedId}
                     initial={{ opacity: 0, y: 14 }}
@@ -398,7 +398,7 @@ export default function App() {
 
                     <button
                       aria-label="Close section"
-                      className="fixed bottom-6 left-1/2 z-40 flex size-14 -translate-x-1/2 cursor-pointer items-center justify-center rounded-full border border-border bg-background/95 text-muted-foreground shadow-lg backdrop-blur transition hover:text-foreground dark:border-white/10 dark:bg-[#171717]/95 dark:hover:text-[#f2f2f2] lg:hidden"
+                      className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] left-1/2 z-40 flex size-14 -translate-x-1/2 cursor-pointer items-center justify-center rounded-full border border-border bg-background/95 text-muted-foreground shadow-lg backdrop-blur transition hover:text-foreground dark:border-white/10 dark:bg-[#171717]/95 dark:hover:text-[#f2f2f2] lg:hidden"
                       onClick={closeLink}
                       type="button"
                     >
@@ -447,7 +447,7 @@ export default function App() {
       </div>
 
       <div
-        className={`absolute bottom-4 right-5 z-30 flex-col items-end gap-3 ${
+        className={`absolute bottom-[calc(1rem+env(safe-area-inset-bottom))] right-5 z-30 flex-col items-end gap-3 ${
           isExpanded ? "hidden lg:flex" : "flex "
         }`}
       >

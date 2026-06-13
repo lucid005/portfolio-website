@@ -27,6 +27,7 @@ import {
 } from "@/lib/portfolio-animations";
 import { portfolioSections } from "@/lib/portfolio-sections";
 import Image from "next/image";
+import Footer from "@/components/Footer";
 
 export default function App() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -92,17 +93,15 @@ export default function App() {
 
   return (
     <main className="relative min-h-dvh overflow-x-hidden bg-background text-foreground">
-      {!isExpanded ? (
-        <button
-          aria-expanded={isMobileMenuOpen}
-          aria-label="Open section menu"
-          className="fixed right-6 top-6 z-50 flex size-12 cursor-pointer items-center justify-center rounded-full border border-border bg-background/90 text-muted-foreground shadow-sm backdrop-blur transition hover:text-foreground dark:border-white/10 dark:bg-[#111111]/90 lg:hidden"
-          onClick={() => setIsMobileMenuOpen(true)}
-          type="button"
-        >
-          <Menu className="size-5" aria-hidden="true" />
-        </button>
-      ) : null}
+      <button
+        aria-expanded={isMobileMenuOpen}
+        aria-label="Open section menu"
+        className="fixed right-6 top-6 z-50 flex size-12 cursor-pointer items-center justify-center rounded-full border border-border bg-background/90 text-muted-foreground shadow-sm backdrop-blur transition hover:text-foreground dark:border-white/10 dark:bg-[#111111]/90 lg:hidden"
+        onClick={() => setIsMobileMenuOpen(true)}
+        type="button"
+      >
+        <Menu className="size-5" aria-hidden="true" />
+      </button>
 
       <AnimatePresence>
         {isMobileMenuOpen ? (
@@ -166,6 +165,13 @@ export default function App() {
                   );
                 })}
               </nav>
+
+              <div className="flex items-center justify-between gap-4 border-t border-border px-4 py-4 dark:border-white/10">
+                <ThemeToggle />
+                <p className="text-right text-xs leading-5 text-muted-foreground">
+                  &copy; {new Date().getFullYear()} Saurav Shrestha
+                </p>
+              </div>
             </motion.div>
           </motion.div>
         ) : null}
@@ -177,9 +183,7 @@ export default function App() {
             isExpanded ? "hidden lg:flex" : "flex"
           }`}
         >
-          <div
-            className="relative h-[25rem] px-0 lg:px-3 lg:h-[15.625rem]"
-          >
+          <div className="relative h-[25rem] px-0 lg:px-3 lg:h-[15.625rem]">
             <motion.div
               layout
               className="relative z-10"
@@ -360,13 +364,13 @@ export default function App() {
             ref={scrollRef}
             className={`no-scrollbar relative z-20 flex w-full flex-col ${
               isExpanded
-                ? "min-h-dvh px-5 pt-8 pb-[calc(8rem+env(safe-area-inset-bottom))] sm:px-10 lg:py-50"
+                ? "min-h-dvh pt-8 pb-[calc(8rem+env(safe-area-inset-bottom))] sm:px-10 lg:py-50"
                 : "py-0 lg:py-50"
             } lg:h-dvh lg:min-h-0 lg:overflow-y-auto lg:px-0`}
           >
             <AnimatePresence mode="wait">
               {isExpanded ? (
-                <div className="relative mx-auto flex min-h-[calc(100dvh-3rem)] w-full max-w-2xl flex-col lg:mx-0 lg:block lg:min-h-full lg:pb-0">
+                <div className="relative mx-auto flex h-auto w-full max-w-2xl flex-col lg:mx-0 lg:block lg:min-h-full lg:pb-0">
                   <motion.div
                     key={expandedId}
                     initial={{ opacity: 0, y: 14 }}
@@ -388,17 +392,9 @@ export default function App() {
                       {SelectedSection ? <SelectedSection /> : null}
                     </div>
 
-                    <div className="mt-auto flex w-full flex-col items-end gap-3 pt-8 pb-4 text-right lg:hidden">
-                      <ThemeToggle />
-                      <p className="text-xs text-muted-foreground">
-                        &copy; {new Date().getFullYear()} Saurav Shrestha. All
-                        rights reserved.
-                      </p>
-                    </div>
-
                     <button
                       aria-label="Close section"
-                      className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] left-1/2 z-40 flex size-14 -translate-x-1/2 cursor-pointer items-center justify-center rounded-full border border-border bg-background/95 text-muted-foreground shadow-lg backdrop-blur transition hover:text-foreground dark:border-white/10 dark:bg-[#171717]/95 dark:hover:text-[#f2f2f2] lg:hidden"
+                      className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] left-1/2 z-50 flex size-14 -translate-x-1/2 cursor-pointer items-center justify-center rounded-full border border-border bg-background/95 text-muted-foreground shadow-lg backdrop-blur transition hover:text-foreground dark:border-white/10 dark:bg-[#171717]/95 dark:hover:text-[#f2f2f2] lg:hidden"
                       onClick={closeLink}
                       type="button"
                     >
@@ -446,17 +442,7 @@ export default function App() {
         </section>
       </div>
 
-      <div
-        className={`absolute bottom-[calc(1rem+env(safe-area-inset-bottom))] right-5 z-30 flex-col items-end gap-3 ${
-          isExpanded ? "hidden lg:flex" : "flex "
-        }`}
-      >
-        <ThemeToggle />
-        <p className="text-xs text-muted-foreground ">
-          &copy; {new Date().getFullYear()} Saurav Shrestha. All rights
-          reserved.
-        </p>
-      </div>
+      <Footer className={`hidden lg:flex ${isExpanded ? "lg:fixed" : ""}`} />
     </main>
   );
 }

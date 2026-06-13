@@ -2,7 +2,7 @@ import { DetailRow, SectionShell } from "./section-shell";
 
 export function AboutSection() {
   return (
-    <SectionShell intro="I’m Saurav Shrestha, a full-stack developer based in Kathmandu, Nepal. I build web products that combine technical structure with a clean visual direction. My work is shaped by a simple goal: create software that feels easy to use, useful in practice, and visually aligned with the purpose of the product.">
+    <SectionShell intro="I'm Saurav Shrestha, a full-stack developer based in Kathmandu, Nepal. I build web products that combine technical structure with a clean visual direction. My work is shaped by a simple goal: create software that feels easy to use, useful in practice, and visually aligned with the purpose of the product.">
       <DetailRow
         title="What I do"
         meta="Full-stack development with a product mindset"
@@ -29,7 +29,7 @@ export function AboutSection() {
       >
         I reach for calm layouts, deliberate typography, and subtle motion that
         makes interfaces feel alive without being loud. Color palettes and
-        spacing are decisions, not defaults — every visual choice should have a
+        spacing are decisions, not defaults - every visual choice should have a
         reason.
       </DetailRow>
     </SectionShell>

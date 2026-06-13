@@ -1,7 +1,8 @@
-import { ArrowUpRight, FileText, Globe } from "lucide-react";
+import { ArrowUpRight, FileText } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
+import { ProjectWebsiteLink } from "@/components/project-website-link";
 import { projects } from "@/lib/projects";
 import { SectionShell } from "./section-shell";
 
@@ -71,20 +72,10 @@ export function ProjectsSection() {
                   />
                 </Link>
 
-                <a
-                  aria-label={`Visit website for ${project.title}`}
-                  className="group/link inline-flex items-center gap-1 text-xs text-muted-foreground underline decoration-border underline-offset-4 transition hover:text-foreground hover:decoration-foreground dark:text-[#777777] dark:decoration-white/15 dark:hover:text-[#f2f2f2]"
+                <ProjectWebsiteLink
                   href={project.links.website}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <Globe className="size-3" aria-hidden="true" />
-                  <span>Visit website</span>
-                  <ArrowUpRight
-                    className="size-2.5 opacity-70 transition group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-                    aria-hidden="true"
-                  />
-                </a>
+                  title={project.title}
+                />
               </div>
             </div>
           </article>

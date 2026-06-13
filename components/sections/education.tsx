@@ -2,9 +2,9 @@ import { SectionShell } from "./section-shell";
 
 const educationItems = [
   {
-    period: "2023 — Present",
+    period: "2023 - Present",
     title: "BSc (Hons) Computing",
-    institution: "Herald College Kathmandu · University of Wolverhampton",
+    institution: "Herald College Kathmandu - University of Wolverhampton",
     status: "Third year",
     description:
       "Studying Computing with modules covering AI and machine learning, big data systems, software engineering, and applied development. My final year project, Skill Lantern, was built and assessed here.",
@@ -39,7 +39,7 @@ export function EducationSection() {
             <article className="relative" key={`${item.title}-${item.period}`}>
               <span
                 aria-hidden="true"
-                className="absolute -left-5 top-1.5 size-2.5 rounded-full border border-foreground bg-background shadow-[0_0_0_6px_hsl(var(--background))] dark:border-[#f2f2f2] dark:bg-[#111111] dark:shadow-[0_0_0_6px_#111111] sm:-left-7 sm:size-3"
+                className="absolute -left-5 top-1.5 size-2.5 rounded-full border border-foreground bg-background shadow-[0_0_0_6px_var(--background)] dark:border-[#f2f2f2] dark:bg-[#111111] dark:shadow-[0_0_0_6px_#111111] sm:-left-7 sm:size-3"
               />
 
               <div className="rounded-xl border border-border bg-background/70 p-4 transition hover:border-foreground/20 dark:border-white/10 dark:bg-white/[0.02] dark:hover:border-white/20 sm:p-5">

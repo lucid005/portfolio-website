@@ -20,6 +20,12 @@ import {
   SiVercel,
 } from "react-icons/si";
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
 type StackItem = {
   icon: IconType;
   name: string;
@@ -88,16 +94,23 @@ export function TechStackSection() {
             </span>
             <div className="flex min-w-0 max-w-full flex-wrap gap-2">
               {group.items.map(({ icon: Icon, name }) => (
-                <span
-                  key={name}
-                  className="inline-flex max-w-full items-center gap-2 rounded-md border border-border bg-muted/20 px-2.5 py-1.5 text-sm text-foreground dark:border-white/10 dark:bg-white/[0.03] dark:text-[#c4c4c4]"
-                >
-                  <Icon
-                    className="size-3.5 shrink-0 text-muted-foreground dark:text-[#8a8a8a]"
-                    aria-hidden="true"
-                  />
-                  <span className="min-w-0 break-words">{name}</span>
-                </span>
+                <Tooltip key={name}>
+                  <TooltipTrigger asChild>
+                    <span
+                      key={name}
+                      className="inline-flex max-w-full items-center gap-2 rounded-md border border-border bg-muted/20 px-2.5 py-1.5 text-sm text-foreground dark:border-white/10 dark:bg-white/3 dark:text-[#c4c4c4] cursor-default"
+                    >
+                      <Icon
+                        className="size-3.5 shrink-0 text-muted-foreground dark:text-[#8a8a8a]"
+                        aria-hidden="true"
+                      />
+                      <span className="min-w-0 wrap-break-word">{name}</span>
+                    </span>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{name}</p>
+                  </TooltipContent>
+                </Tooltip>
               ))}
             </div>
           </div>

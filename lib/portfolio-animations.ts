@@ -95,13 +95,13 @@ export const backTitleVariants: Variants = {
 };
 
 export const portraitVariants: Variants = {
-  hidden: { opacity: 0, y: 18, scale: 0.98 },
-  visible: { opacity: 1, y: 0, scale: 1 },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
 };
 
 export const portraitTransition: Transition = {
-  duration: 0.34,
-  ease: [0.22, 1, 0.36, 1],
+  duration: 0.28,
+  ease: "easeOut",
 };
 
 export function delayedFadeTransition(isHidden: boolean, delay = 0.12): Transition {

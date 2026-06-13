@@ -19,6 +19,8 @@ import {
   longIntroWordVariants,
   noTransition,
   pillTransition,
+  portraitTransition,
+  portraitVariants,
   textMorphTransition,
 } from "@/lib/portfolio-animations";
 import { portfolioSections } from "@/lib/portfolio-sections";
@@ -65,7 +67,7 @@ export default function Home() {
   return (
     <main className="max-w-6xl w-full p-4 h-screen overflow-hidden">
       <div className="h-full flex items-start justify-center gap-4">
-        <div className="relative h-full w-2/6">
+        <div className="relative h-full max-w-[400] w-full">
           <motion.div
             layout
             className="absolute left-0 top-0 z-10 px-3"
@@ -263,20 +265,29 @@ export default function Home() {
               </motion.div>
             )}
           </AnimatePresence>
-          <Image
-            src="/portrait-upscaled.webp"
+          <motion.div
+            initial="hidden"
+            animate={isExpanded ? "hidden" : "visible"}
+            exit="hidden"
+            variants={portraitVariants}
+            transition={portraitTransition}
             className={
               isExpanded
-                ? "hidden"
-                : "absolute bottom-0 -right-50 h-7/8 w-full object-contain"
+                ? "pointer-events-none absolute bottom-0 -right-50 h-7/8 w-full"
+                : "absolute bottom-0 -right-50 h-7/8 w-full"
             }
-            alt="Portrait of Saurav Shrestha"
-            width={2595}
-            height={2304}
-            sizes="(min-width: 1024px) 67vw, 100vw"
-            priority
-            unoptimized
-          />
+          >
+            <Image
+              src="/portrait-upscaled.webp"
+              className="h-full w-full object-contain"
+              alt="Portrait of Saurav Shrestha"
+              width={2595}
+              height={2304}
+              sizes="(min-width: 1024px) 67vw, 100vw"
+              priority
+              unoptimized
+            />
+          </motion.div>
         </div>
       </div>
     </main>

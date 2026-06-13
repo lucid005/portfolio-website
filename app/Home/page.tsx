@@ -1,35 +1,30 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import type { Transition } from "framer-motion";
 import { useState } from "react";
 import { FaChevronDown, FaExpandAlt } from "react-icons/fa";
 
+import {
+  backButtonTransition,
+  backButtonVariants,
+  backHeaderVariants,
+  backIconTransition,
+  backIconVariants,
+  backTitleVariants,
+  delayedFadeTransition,
+  fadeTransition,
+  introLayoutTransition,
+  introRevealTransition,
+  longIntroVariants,
+  longIntroWordVariants,
+  noTransition,
+  pillTransition,
+  portraitTransition,
+  portraitVariants,
+  textMorphTransition,
+} from "@/lib/portfolio-animations";
 import { portfolioSections } from "@/lib/portfolio-sections";
-
-const fadeTransition: Transition = { duration: 0.2, ease: "easeOut" };
-const introRevealTransition: Transition = {
-  duration: 0.28,
-  ease: [0.22, 1, 0.36, 1],
-};
-const pillTransition: Transition = {
-  type: "spring",
-  stiffness: 520,
-  damping: 34,
-  mass: 0.8,
-};
-const textMorphTransition: Transition = {
-  type: "spring",
-  stiffness: 260,
-  damping: 32,
-  mass: 0.95,
-};
-const introLayoutTransition: Transition = {
-  type: "spring",
-  stiffness: 180,
-  damping: 26,
-  mass: 0.8,
-};
+import Image from "next/image";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -72,7 +67,7 @@ export default function Home() {
   return (
     <main className="max-w-6xl w-full p-4 h-screen overflow-hidden">
       <div className="h-full flex items-start justify-center gap-4">
-        <div className="relative h-full w-2/6">
+        <div className="relative h-full max-w-[400] w-full">
           <motion.div
             layout
             className="absolute left-0 top-0 z-10 px-3"
@@ -95,7 +90,7 @@ export default function Home() {
                 initial={false}
                 animate={{ height: isIntroExpanded ? 360 : 108 }}
                 transition={
-                  hasIntroInteracted ? introLayoutTransition : { duration: 0 }
+                  hasIntroInteracted ? introLayoutTransition : noTransition
                 }
               >
                 <motion.p
@@ -109,31 +104,13 @@ export default function Home() {
                     className="inline"
                     animate={isIntroExpanded ? "visible" : "hidden"}
                     initial="hidden"
-                    variants={{
-                      hidden: {
-                        opacity: 1,
-                        transition: {
-                          staggerChildren: 0.006,
-                          staggerDirection: -1,
-                        },
-                      },
-                      visible: {
-                        opacity: 1,
-                        transition: {
-                          delayChildren: 0.03,
-                          staggerChildren: 0.012,
-                        },
-                      },
-                    }}
+                    variants={longIntroVariants}
                   >
                     {longIntroWords.map((word, index) => (
                       <motion.span
                         className="mr-[0.25em] inline-block"
                         key={`${word}-${index}`}
-                        variants={{
-                          hidden: { opacity: 0, y: -8 },
-                          visible: { opacity: 1, y: 0 },
-                        }}
+                        variants={longIntroWordVariants}
                         transition={introRevealTransition}
                       >
                         {word}
@@ -146,7 +123,7 @@ export default function Home() {
                   layout
                   initial={false}
                   transition={
-                    hasIntroInteracted ? introLayoutTransition : { duration: 0 }
+                    hasIntroInteracted ? introLayoutTransition : noTransition
                   }
                   aria-expanded={isIntroExpanded}
                   className="absolute left-0 top-full mt-5 flex cursor-pointer items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground dark:text-[#7a7a7a] dark:hover:text-[#f2f2f2]"
@@ -172,44 +149,17 @@ export default function Home() {
                   initial="hidden"
                   animate="visible"
                   exit="hidden"
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      transition: { duration: 0.16, ease: "easeOut" },
-                    },
-                    visible: {
-                      opacity: 1,
-                      transition: {
-                        staggerChildren: 0.045,
-                        delayChildren: 0.04,
-                      },
-                    },
-                  }}
+                  variants={backHeaderVariants}
                 >
                   <motion.button
-                    variants={{
-                      hidden: { opacity: 0,  y: 20 },
-                      visible: { opacity: 1, y: 0 },
-                    }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 200,
-                      damping: 18,
-                      mass: 0.8,
-                    }}
+                    variants={backButtonVariants}
+                    transition={backButtonTransition}
                     onClick={closeLink}
                     className="group flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-border bg-background shadow-sm transition hover:bg-muted hover:shadow-md dark:border-white/10 dark:bg-[#171717] dark:hover:bg-[#222222]"
                   >
                     <motion.span
-                      variants={{
-                        hidden: { opacity: 0, rotate: 360, x: 4 },
-                        visible: { opacity: 1, rotate: 0, x: 0 },
-                      }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 360,
-                        damping: 24,
-                      }}
+                      variants={backIconVariants}
+                      transition={backIconTransition}
                     >
                       <FaChevronDown className="rotate-90 text-sm text-muted-foreground transition-transform" />
                     </motion.span>
@@ -219,10 +169,7 @@ export default function Home() {
                     layoutId={`link-text-${expandedId}`}
                     className="text-2xl font-semibold tracking-tight text-foreground dark:text-[#f2f2f2]"
                     style={{ display: "block" }}
-                    variants={{
-                      hidden: { opacity: 0, x: -10 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
+                    variants={backTitleVariants}
                     transition={textMorphTransition}
                   >
                     {expandedSection?.name}
@@ -255,10 +202,7 @@ export default function Home() {
                     opacity: shouldHideLinks ? 0 : 1,
                     y: shouldHideLinks ? 6 : 0,
                   }}
-                  transition={{
-                    ...fadeTransition,
-                    delay: shouldHideLinks ? 0 : 0.2,
-                  }}
+                  transition={delayedFadeTransition(shouldHideLinks, 0.2)}
                   style={{
                     pointerEvents:
                       shouldHideLinks || isTransitionLocked ? "none" : "auto",
@@ -292,7 +236,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex w-4/6 flex-col ">
+        <div className="flex w-4/6 flex-col  ">
           <AnimatePresence mode="wait">
             {isExpanded ? (
               <motion.div
@@ -311,21 +255,39 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: shouldHideLinks ? 0 : 1 }}
                 exit={{ opacity: 0 }}
-                transition={{
-                  ...fadeTransition,
-                  delay: shouldHideLinks ? 0 : 0.12,
-                }}
+                transition={delayedFadeTransition(shouldHideLinks)}
                 className="flex w-full items-start justify-center pt-10"
                 style={{
                   pointerEvents: shouldHideLinks ? "none" : "auto",
                 }}
               >
-                <p className="text-muted-foreground/50 text-sm ">
-                  
-                </p>
+                <p className="text-muted-foreground/50 text-sm "></p>
               </motion.div>
             )}
           </AnimatePresence>
+          <motion.div
+            initial="hidden"
+            animate={isExpanded ? "hidden" : "visible"}
+            exit="hidden"
+            variants={portraitVariants}
+            transition={portraitTransition}
+            className={
+              isExpanded
+                ? "pointer-events-none absolute bottom-0 -right-50 h-7/8 w-full"
+                : "absolute bottom-0 -right-50 h-7/8 w-full"
+            }
+          >
+            <Image
+              src="/portrait-upscaled.webp"
+              className="h-full w-full object-contain"
+              alt="Portrait of Saurav Shrestha"
+              width={2595}
+              height={2304}
+              sizes="(min-width: 1024px) 67vw, 100vw"
+              priority
+              unoptimized
+            />
+          </motion.div>
         </div>
       </div>
     </main>

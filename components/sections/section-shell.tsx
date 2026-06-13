@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 type SectionShellProps = {
   children: ReactNode;
-  intro: string;
+  intro?: string;
 };
 
 type DetailRowProps = {
@@ -16,10 +16,12 @@ type DetailRowProps = {
 
 export function SectionShell({ children, intro }: SectionShellProps) {
   return (
-    <section className="space-y-7">
-      <p className="max-w-xl text-base leading-relaxed text-muted-foreground dark:text-[#8a8a8a]">
-        {intro}
-      </p>
+    <section className="space-y-7 py-3">
+      {intro ? (
+        <p className="w-full text-base leading-relaxed text-muted-foreground dark:text-[#8a8a8a]">
+          {intro}
+        </p>
+      ) : null}
       <div className="divide-y divide-border dark:divide-white/10">
         {children}
       </div>

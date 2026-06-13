@@ -228,5 +228,24 @@
   }
   html {
     @apply font-sans;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

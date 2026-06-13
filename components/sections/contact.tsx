@@ -3,25 +3,25 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const contactLinks = [
   {
-    href: "mailto:saurav.shrestha@example.com",
+    href: "mailto:sauravshrestha2005@gmail.com",
     icon: Mail,
     label: "Email",
-    value: "saurav.shrestha@example.com",
+    value: "sauravshrestha2005@gmail.com",
   },
   {
-    href: "https://github.com/sauravshrestha",
+    href: "https://github.com/lucid005",
     icon: FaGithub,
     label: "GitHub",
-    value: "github.com/sauravshrestha",
+    value: "github.com/lucid005",
   },
   {
-    href: "https://www.linkedin.com/in/sauravshrestha",
+    href: "https://www.linkedin.com/in/saurav-shrestha-36a39b290/",
     icon: FaLinkedinIn,
     label: "LinkedIn",
-    value: "linkedin.com/in/sauravshrestha",
+    value: "linkedin.com/in/saurav-shrestha-36a39b290",
   },
   {
-    href: "mailto:saurav.shrestha@example.com?subject=Resume%20request",
+    href: "mailto:sauravshrestha2005@gmail.com?subject=Resume%20Request",
     icon: FileText,
     label: "Resume",
     value: "Available on request",
@@ -32,8 +32,9 @@ export function ContactSection() {
   return (
     <section className="space-y-7">
       <p className="max-w-xl text-base leading-relaxed text-muted-foreground dark:text-[#8a8a8a]">
-        I am open to frontend roles, practical collaborations, and thoughtful
-        web projects where clean execution matters.
+        Open to full-stack roles, freelance projects, and collaborations where
+        clean execution and thoughtful product thinking matter. If you have
+        something worth building, reach out.
       </p>
 
       <div className="divide-y divide-border dark:divide-white/10">

@@ -178,7 +178,7 @@ export default function App() {
           }`}
         >
           <div
-            className="relative h-[25rem] lg:h-[15.625rem]"
+            className="relative h-[25rem] px-0 lg:px-3 lg:h-[15.625rem]"
           >
             <motion.div
               layout

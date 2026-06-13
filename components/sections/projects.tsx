@@ -9,7 +9,7 @@ import { SectionShell } from "./section-shell";
 export function ProjectsSection() {
   return (
     <SectionShell>
-      <div className="grid gap-4">
+      <div className="grid gap-4 mb-0 lg:mb-20">
         {projects.map((project) => (
           <article
             className="group flex flex-col overflow-hidden rounded-lg border border-border bg-background transition hover:border-foreground/20 dark:border-white/10 dark:bg-white/2 dark:hover:border-white/20 mb-10"

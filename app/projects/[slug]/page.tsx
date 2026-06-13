@@ -1,9 +1,10 @@
-import { ArrowLeft, ArrowUpRight, Check, Globe } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
 import { ProjectImagePreview } from "@/components/project-image-preview";
+import { ProjectWebsiteLink } from "@/components/project-website-link";
 import { ProjectReveal } from "@/components/project-reveal";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { getProject, projects } from "@/lib/projects";
@@ -90,19 +91,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 />
               </a>
 
-              <a
-                className="group inline-flex items-center gap-1 text-xs text-muted-foreground underline decoration-border underline-offset-4 transition hover:text-foreground hover:decoration-foreground dark:text-[#777777] dark:decoration-white/15 dark:hover:text-[#f2f2f2]"
+              <ProjectWebsiteLink
                 href={project.links.website}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <Globe className="size-3" aria-hidden="true" />
-                <span>Visit website</span>
-                <ArrowUpRight
-                  className="size-2.5 opacity-70 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  aria-hidden="true"
-                />
-              </a>
+                title={project.title}
+              />
             </div>
           </header>
         </ProjectReveal>
@@ -317,6 +309,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </section>
           </ProjectReveal>
         ) : null}
+
+        <div className="flex flex-col items-end gap-3 pt-4 text-right sm:hidden">
+          <ThemeToggle />
+          <p className="text-xs text-muted-foreground">
+            &copy; {year} Saurav Shrestha. All rights reserved.
+          </p>
+        </div>
       </div>
 
       <div className="fixed bottom-4 right-4 z-20 flex flex-col items-end gap-3 max-sm:hidden">

@@ -313,7 +313,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           ) : null}
         </div>
       </div>
-      <Footer />
+      <Footer className="relative" />
     </main>
   );
 }

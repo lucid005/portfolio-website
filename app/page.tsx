@@ -30,7 +30,7 @@ import Image from "next/image";
 import Footer from "@/components/Footer";
 
 export default function App() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [hasIntroInteracted, setHasIntroInteracted] = useState(false);
   const [isIntroExpanded, setIsIntroExpanded] = useState(false);
@@ -57,16 +57,9 @@ export default function App() {
   );
   const SelectedSection = expandedSection?.component;
 
-  const openLink = (id: number, index?: number) => {
+  const openLink = (id: number) => {
     if (isTransitionLocked) {
       return;
-    }
-
-    const nextIndex =
-      index ?? portfolioSections.findIndex((section) => section.id === id);
-
-    if (nextIndex >= 0) {
-      setActiveIndex(nextIndex);
     }
 
     setExpandedId(id);
@@ -139,18 +132,18 @@ export default function App() {
 
               <nav className="p-2">
                 {portfolioSections.map((section, index) => {
-                  const isActive = activeIndex === index;
+                  const isActive = expandedId === section.id;
 
                   return (
                     <button
-                      className={`flex w-full cursor-pointer items-center justify-between rounded-xl px-3 py-3 text-left text-sm transition hover:bg-muted/60 ${
+                      className={`flex w-full cursor-pointer items-center justify-between rounded-xl px-3 py-3 text-left text-sm transition hover:bg-muted/60 hover:text-foreground ${
                         isActive
-                          ? "text-foreground"
-                          : "text-muted-foreground dark:text-[#7a7a7a]"
+                          ? "text-foreground dark:text-[#f2f2f2]"
+                          : "text-muted-foreground dark:text-[#7a7a7a] dark:hover:text-[#f2f2f2]"
                       }`}
                       key={section.id}
                       onClick={() => {
-                        openLink(section.id, index);
+                        openLink(section.id);
                       }}
                       type="button"
                     >
@@ -298,16 +291,21 @@ export default function App() {
             </div>
           </div>
 
-          <nav className="hidden w-full flex-col items-start gap-2 lg:flex">
+          <nav
+            className="hidden w-full flex-col items-start gap-2 lg:flex"
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
             {!isExpanded
               ? portfolioSections.map((section, index) => {
-                  const isActive = activeIndex === index;
+                  const isActive = hoveredIndex === index;
 
                   return (
                     <motion.button
                       key={section.id}
                       className={`relative flex w-full cursor-pointer items-center px-4 py-2.5 text-lg font-medium transition sm:w-5/6 ${
-                        isActive ? "text-foreground" : "text-muted-foreground"
+                        isActive
+                          ? "text-foreground"
+                          : "text-muted-foreground hover:text-foreground"
                       } ${
                         isActive
                           ? "dark:text-[#f2f2f2]"
@@ -324,8 +322,8 @@ export default function App() {
                             ? "none"
                             : "auto",
                       }}
-                      onClick={() => openLink(section.id, index)}
-                      onMouseEnter={() => setActiveIndex(index)}
+                      onClick={() => openLink(section.id)}
+                      onMouseEnter={() => setHoveredIndex(index)}
                       type="button"
                     >
                       {isActive && !shouldHideLinks && (

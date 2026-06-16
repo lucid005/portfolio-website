@@ -21,10 +21,10 @@ const contactLinks = [
     value: "linkedin.com/in/saurav-shrestha-36a39b290",
   },
   {
-    href: "mailto:sauravshrestha2005@gmail.com?subject=Resume%20Request",
+    href: "./Saurav_Shrestha_Resume.pdf",
     icon: FileText,
     label: "Resume",
-    value: "Available on request",
+    value: "View Resume",
   },
 ];
 
